@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "campaign-link-doctor"
+version = "0.1.0"
+description = "Local-first campaign URL audits, privacy checks and UTM builder"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Pryntor Open Source"}]
+keywords = ["utm", "marketing", "analytics", "privacy", "cli"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License"]
+
+[project.scripts]
+campaign-link-doctor = "campaign_link_doctor.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["campaign_link_doctor*"]
+

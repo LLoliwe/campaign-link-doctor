@@ -1,0 +1,3 @@
+https://example.org/shop?sku=123
+https://example.org/sale?utm_source=email&utm_medium=newsletter&utm_campaign=october
+

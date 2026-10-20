@@ -1,0 +1,5 @@
+url,scenario
+https://example.org/sale?utm_source=newsletter&utm_medium=email&utm_campaign=october,complete tracking
+https://example.org/sale?utm_source=partner,incomplete tracking
+https://example.org/shop?sku=123,ordinary link
+
