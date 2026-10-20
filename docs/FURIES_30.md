@@ -33,7 +33,11 @@ A concrete 30-angle adversarial review, **not 30 separately activated agents or 
 | 27 | Are there regression tests? | Python unittest suite |
 | 28 | Is private vulnerability reporting documented? | SECURITY |
 | 29 | Is community participation practical? | CONTRIBUTING and issue guidance |
-| 30 | Did independent reviewers approve release? | **HOLD: human review/hosted CI outstanding** |
+| 30 | Did independent reviewers approve release? | **Hosted CI passed on initial commit. Founder authorized public alpha; external review still outstanding.** |
 
 The product makes no claim of live platform validation, paid-media performance uplift, marketing-certification approval, 30 independent workers or achieved stars.
 
+
+## Publication classification
+
+Original, narrowly scoped open-source **alpha** authorized by the founder on 20 October 2026. Live production guarantees, external independent expert approvals, partnerships and star/adoption counts are **not** claimed. Re-run hosted checks on the final hardened commit before a public launch.
