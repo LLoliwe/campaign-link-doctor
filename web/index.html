@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free, local-first campaign link checker, UTM builder and privacy-conscious URL cleaner. No accounts or data upload.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <title>Campaign Link Doctor | Your link is the first impression</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Campaign Link Doctor home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>link<span class="brand-name-accent">doctor.</span></span>
+      </a>
+      <div class="head-right"><span class="free-pill"><span class="live-dot"></span> LOCAL BY DESIGN</span>
+        <a class="source-link" href="https://github.com/LLoliwe/campaign-link-doctor" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="main-heading">
+        <div class="kicker"><span class="tiny-spark" aria-hidden="true">✳</span> BEFORE THEY CLICK, MAKE IT COUNT.</div>
+        <h1 id="main-heading">A better campaign<br>starts with <em>a better link.</em></h1>
+        <p class="lead">Broken tags waste time. Leaky links erode trust. Give yours a quick check before sending them into the world.</p>
+        <div class="trustline"><span><span class="check-icon" aria-hidden="true">✓</span> No signup</span><span><span class="check-icon" aria-hidden="true">✓</span> No tracking</span><span><span class="check-icon" aria-hidden="true">✓</span> Always free</span></div>
+      </section>
+
+      <section class="workbench" aria-label="Campaign link workbench">
+        <div class="workbench-top">
+          <div><p class="eyebrow">YOUR LITTLE LINK LAB</p><h2>What are we working on?</h2></div>
+          <div class="tiny-tag">01 / PRE-FLIGHT</div>
+        </div>
+        <div class="mode-tabs" role="tablist" aria-label="Choose task">
+          <button type="button" class="mode-tab active" role="tab" id="tab-check" aria-selected="true" aria-controls="panel-check" data-mode="check"><span aria-hidden="true">◈</span> Check links</button>
+          <button type="button" class="mode-tab" role="tab" id="tab-build" aria-selected="false" aria-controls="panel-build" data-mode="build" tabindex="-1"><span aria-hidden="true">＋</span> Build a link</button>
+          <button type="button" class="mode-tab" role="tab" id="tab-clean" aria-selected="false" aria-controls="panel-clean" data-mode="clean" tabindex="-1"><span aria-hidden="true">✺</span> Clean a link</button>
+        </div>
+        <section class="mode-panel" role="tabpanel" id="panel-check" aria-labelledby="tab-check">
+          <p class="panel-description">Paste one or several links, one per line. We'll look for missing UTMs, duplicates and common privacy mistakes. Your links stay in this tab.</p>
+          <form id="check-form">
+            <label for="check-input">Links to inspect <span class="label-muted">One per line, up to 5,000</span></label>
+            <textarea id="check-input" rows="5" spellcheck="false" placeholder="https://example.org/offer?utm_source=..." required>https://example.org/sale?utm_source=partner
+https://example.org/shop?sku=123</textarea>
+            <div class="form-actions">
+              <span class="supporting">Input URLs never appear in the audit report.</span>
+              <button class="primary-btn" type="submit">Check my links <span aria-hidden="true">↗</span></button>
+            </div>
+          </form>
+          <div class="results" id="check-results" role="status" aria-live="polite" aria-atomic="false" hidden></div>
+        </section>
+        <section class="mode-panel" role="tabpanel" id="panel-build" aria-labelledby="tab-build" hidden>
+          <p class="panel-description">Give every channel a clear name. Build a consistent UTM-tagged link without remembering the syntax.</p>
+          <form id="build-form">
+            <label for="build-base">Destination URL</label><input id="build-base" type="url" placeholder="https://example.org/sale" required>
+            <div class="two-col">
+              <div><label for="build-source">Source <span class="required">Required</span></label><input id="build-source" placeholder="newsletter" required></div>
+              <div><label for="build-medium">Medium <span class="required">Required</span></label><input id="build-medium" placeholder="email" required></div>
+            </div>
+            <label for="build-campaign">Campaign <span class="required">Required</span></label><input id="build-campaign" placeholder="october-launch" required>
+            <div class="two-col">
+              <div><label for="build-content">Content <span class="label-muted">Optional</span></label><input id="build-content" placeholder="hero-button"></div>
+              <div><label for="build-term">Term <span class="label-muted">Optional</span></label><input id="build-term" placeholder="running-shoes"></div>
+            </div>
+            <label class="check-control"><input type="checkbox" id="build-replace"> Replace UTMs already on the destination</label>
+            <div class="form-actions"><span class="supporting">Only you see the final link.</span><button class="primary-btn" type="submit">Build my link <span aria-hidden="true">↗</span></button></div>
+          </form>
+          <div class="results" id="build-results" role="status" aria-live="polite" hidden></div>
+        </section>
+        <section class="mode-panel" role="tabpanel" id="panel-clean" aria-labelledby="tab-clean" hidden>
+          <p class="panel-description">Want to share a link without its campaign baggage? Remove common tracking IDs and sensitive query fields.</p>
+          <form id="clean-form">
+            <label for="clean-input">Link to clean</label>
+            <textarea id="clean-input" rows="4" placeholder="https://example.org/article?utm_source=..." spellcheck="false" required></textarea>
+            <div class="form-actions"><span class="supporting">Review the cleaned URL before sharing.</span><button class="primary-btn" type="submit">Remove tracking <span aria-hidden="true">↗</span></button></div>
+          </form>
+          <div class="results" id="clean-results" role="status" aria-live="polite" hidden></div>
+        </section>
+        <div class="workbench-footer"><span aria-hidden="true">◉</span> Everything runs in your browser. No URL is uploaded or stored.</div>
+      </section>
+
+      <section class="bottom-info" aria-label="About this tool">
+        <article><span class="info-number">01</span><h3>Find the little mistakes.</h3><p>Incomplete UTMs and duplicate tags get flagged before they confuse your reporting.</p></article>
+        <article><span class="info-number">02</span><h3>Protect real people.</h3><p>Spot some common personal data and token patterns in query strings, without printing their values.</p></article>
+        <article><span class="info-number">03</span><h3>Keep what matters.</h3><p>No subscription, no API key, no account. Just a useful tool with source you can inspect.</p></article>
+      </section>
+    </main>
+    <footer class="site-footer"><span>Made for people who care about the details. <strong>Pryntor Open Source</strong></span><span>Open source • MIT licensed • Alpha</span></footer>
+  </div>
+</body>
+</html>
+

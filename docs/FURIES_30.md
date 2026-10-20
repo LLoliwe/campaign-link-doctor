@@ -41,3 +41,7 @@ The product makes no claim of live platform validation, paid-media performance u
 ## Publication classification
 
 Original, narrowly scoped open-source **alpha** authorized by the founder on 20 October 2026. Live production guarantees, external independent expert approvals, partnerships and star/adoption counts are **not** claimed. Re-run hosted checks on the final hardened commit before a public launch.
+
+## Browser 30-Furies extension (2026-10-20)
+
+The same 30 questions apply to the new browser surface. The 30 additional Node tests cover parsing, PII redaction, UTM building and stripping logic. The static app uses DOM `textContent`, not `innerHTML`, for user-controlled inputs; forbids third-party network connections with a restrictive CSP; and uses keyboard-operable ARIA tabs. These are **design measures and local tests only**, not a completed external security audit, browser E2E check or accessibility certification. Human visual QA and independent expert reviews remain outstanding.

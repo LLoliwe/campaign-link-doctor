@@ -6,6 +6,16 @@ A free, local-first URL preflight for marketers, analysts, agencies, founders an
 
 No login, browser extension, telemetry, network request, API token or paid service.
 
+## New: browser edition, no installation
+
+Prefer a visual workspace to a CLI? Open the bundled [browser edition](web/README.md) with:
+
+~~~sh
+python3 -m http.server 8080 --bind 127.0.0.1 --directory web
+~~~
+
+Then visit http://127.0.0.1:8080. It works entirely on your machine, with no uploads, cookies, accounts, third-party scripts or remote assets. [Browser code](web/) is original and has its own Node test suite. The browser UI is an alpha; automated browser accessibility and cross-device visual QA are still pending.
+
 ## Start in 30 seconds
 
 Requires Python 3.10 or newer. Everything runs with the Python standard library.
